@@ -14,7 +14,7 @@ const NoteItem = ({ note, fetchNotes, setEditingNote }) => {
     >
       <h3>{note.title}</h3>
       <p>{note.description}</p>
-
+      <p className="date">Created Date: {new Date(note.createdAt).toLocaleString()}</p>
       <div className="actions">
         <button onClick={() => setEditingNote(note)}>Edit</button>
         <button onClick={handleDelete}>Delete</button>
