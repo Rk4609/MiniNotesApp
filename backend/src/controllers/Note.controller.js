@@ -5,20 +5,18 @@ import { ApiResponse } from "../utills/ApiResponse.js"
 
 //create Notes
 const createNote = asyncHandler(async (req, res) => {
-  try {
-    const note = await Note.create(req.body)
-    res.status(201).json(new ApiResponse(201, note, "Note created"))
-  } catch (error) {
-    throw new ApiError(500, "Server Error:", error)
-  }
+  const note = await Note.create(req.body)
+  return res.status(201).json(
+    new ApiResponse(201, note, "Note created")
+  )
 })
 
 const getAllNotes = asyncHandler(async (req, res) => {
   const notes = await Note.find()
-  if (!notes) {
-    throw new ApiError(404, "Notes not Found")
-  }
-  return res.status(200).json(new ApiResponse(200, notes, "Notes fetched"))
+
+  return res.status(200).json(
+    new ApiResponse(200, notes, "Notes fetched")
+  )
 })
 
 const updateNote = asyncHandler(async (req, res) => {
