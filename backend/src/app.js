@@ -5,10 +5,13 @@ const app = express()
 
 app.use(
   cors({
-    origin:["http://localhost:5173","https://mini-notes-app-three.vercel.app"],
+    origin:["http://localhost:5173",
+      "https://mini-notes-app-three.vercel.app"],
     credentials: true,
+     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   }),
 )
+app.options("*", cors());
 
 app.use(cookieparser())
 app.use(express.json())
