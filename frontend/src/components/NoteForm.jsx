@@ -40,6 +40,7 @@ const NoteForm = ({ fetchNotes, editingNote, setEditingNote }) => {
         placeholder="Title"
         value={formData.title}
         onChange={handleChange}
+        required
       />
 
       <input
@@ -48,9 +49,13 @@ const NoteForm = ({ fetchNotes, editingNote, setEditingNote }) => {
         placeholder="Description"
         value={formData.description}
         onChange={handleChange}
+        required
       />
 
-      <button type="submit"> {editingNote ? "Update" : "Add"} Note</button>
+      <button className="btn" type="submit">
+        {" "}
+        {editingNote ? "Update" : "Add"} Note
+      </button>
     </form>
   )
 }

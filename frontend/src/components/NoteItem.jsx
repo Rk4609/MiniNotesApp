@@ -8,12 +8,17 @@ const NoteItem = ({ note, fetchNotes, setEditingNote }) => {
     fetchNotes()
   }
   return (
-    <div style={{ border: "1px solid gray", margin: "10px", padding: "10px" }}>
+    <div
+      className="card"
+      style={{ border: "1px solid gray", margin: "10px", padding: "10px" }}
+    >
       <h3>{note.title}</h3>
       <p>{note.description}</p>
 
-      <button onClick={() => setEditingNote(note)}>Edit</button>
-      <button onClick={handleDelete}>Delete</button>
+      <div className="actions">
+        <button onClick={() => setEditingNote(note)}>Edit</button>
+        <button onClick={handleDelete}>Delete</button>
+      </div>
     </div>
   )
 }
