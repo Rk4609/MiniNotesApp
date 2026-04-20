@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const API = axios.create({
-  baseURL: "http://localhost:5000/api/notes",
+  baseURL: "https://mininotesapp-2.onrender.com/",
 })
 
 export default API
