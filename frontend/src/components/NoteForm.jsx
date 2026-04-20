@@ -22,10 +22,10 @@ const NoteForm = ({ fetchNotes, editingNote, setEditingNote }) => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     if (editingNote) {
-      await API.put(`/${editingNote._id}`, formData)
+      await API.put(`/api/notes/${editingNote._id}`, formData)
       setEditingNote(null)
     } else {
-      await API.post("/add", formData)
+      await API.post("api/notes/add", formData)
       alert("Add new Notes")
     }
     setFormData({ title: "", description: "" })

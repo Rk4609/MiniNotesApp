@@ -14,9 +14,8 @@ const Home = () => {
   const fetchNotes = async () => {
     setloading(true)
     try {
-      const res = await API.get("/")
+      const res = await API.get("/api/notes")
       setNotes(res.data.data)
-      console.log(res.data.data)
     } catch (error) {
       console.log("Error", error)
     }

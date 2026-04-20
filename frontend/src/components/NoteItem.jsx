@@ -3,7 +3,7 @@ import API from "../services/api"
 
 const NoteItem = ({ note, fetchNotes, setEditingNote }) => {
   const handleDelete = async () => {
-    await API.delete(`/${note._id}`)
+    await API.delete(`/api/notes/${note._id}`)
     alert("deleted")
     fetchNotes()
   }
