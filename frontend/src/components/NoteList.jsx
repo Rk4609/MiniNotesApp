@@ -3,7 +3,7 @@ import NoteItem from './NoteItem'
 
 const NoteList = ({notes,fetchNotes,setEditingNote}) => {
   return (
-    <div>
+    <div className="notes-container">
         {notes.map((note)=>(
             <NoteItem key={note._id}
             note={note}

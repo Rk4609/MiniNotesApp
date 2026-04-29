@@ -24,6 +24,7 @@ const NoteForm = ({ fetchNotes, editingNote, setEditingNote }) => {
     if (editingNote) {
       await API.put(`/api/notes/${editingNote._id}`, formData)
       setEditingNote(null)
+      alert("Updated Note")
     } else {
       await API.post("/api/notes/add", formData)
       alert("Add new Notes")
